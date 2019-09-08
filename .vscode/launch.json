@@ -1,0 +1,19 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Test",
+            "request": "launch",
+            "mainClass": "maze.Test",
+            "projectName": "maze"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - App",
+            "request": "launch",
+            "mainClass": "maze.App",
+            "projectName": "maze",
+            "args": "assets/very_large.bmp"
+        }
+    ]
+}
