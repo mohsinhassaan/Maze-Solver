@@ -16,7 +16,7 @@ import org.jgrapht.graph.DefaultWeightedEdge;
  */
 public class GraphWriter {
 
-    static void writePath(GraphPath<Vertex, DefaultWeightedEdge> path,
+    static int writePath(GraphPath<Vertex, DefaultWeightedEdge> path,
             DefaultUndirectedWeightedGraph<Vertex, DefaultWeightedEdge> G, File outfile, File infile)
             throws IOException {
         BufferedImage image = ImageIO.read(infile);
@@ -48,10 +48,10 @@ public class GraphWriter {
                     }
                 } while (x++ != v2.getX());
             }
-            ImageIO.write(image, "bmp", outfile);
         }
 
-        System.out.println("Length of path: " + n);
+        ImageIO.write(image, "bmp", outfile);
 
+        return n;
     }
 }

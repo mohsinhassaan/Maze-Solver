@@ -24,7 +24,16 @@ public class App {
 
         File infile = new File(args[0]);
         var image = ImageIO.read(infile);
+        long t1, t2;
+
+        t1 = System.nanoTime();
+
         var G = GraphLoader.load(image);
+
+        t2 = System.nanoTime();
+
+        System.out.println(String.format("Graph loaded in %dms", (t2 - t1) / 1000000));
+
         var V = G.vertexSet();
 
         Vertex source = null, sink = null;
@@ -37,8 +46,22 @@ public class App {
             }
         }
 
+        t1 = System.nanoTime();
+
         var sp = DijkstraShortestPath.findPathBetween(G, source, sink);
 
-        GraphWriter.writePath(sp, G, new File("solved.bmp"), infile);
+        t2 = System.nanoTime();
+
+        System.out.println(String.format("Shortest path calculated in %dms", (t2 - t1) / 1000000));
+
+        t1 = System.nanoTime();
+
+        int n = GraphWriter.writePath(sp, G, new File("solved.bmp"), infile);
+
+        t2 = System.nanoTime();
+
+        System.out.println(String.format("Solution written in %dms", (t2 - t1) / 1000000));
+
+        System.out.println("Length of path: " + n);
     }
 }
