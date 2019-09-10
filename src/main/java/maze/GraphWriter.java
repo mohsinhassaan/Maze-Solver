@@ -16,12 +16,11 @@ import org.jgrapht.graph.DefaultWeightedEdge;
  */
 public class GraphWriter {
 
-    static int writePath(GraphPath<Vertex, DefaultWeightedEdge> path,
-            DefaultUndirectedWeightedGraph<Vertex, DefaultWeightedEdge> G, File outfile, File infile)
-            throws IOException {
+    static int writePath(GraphPath<Vertex, DefaultWeightedEdge> path, File outfile, File infile) throws IOException {
         BufferedImage image = ImageIO.read(infile);
 
         int n = 0;
+        var G = path.getGraph();
 
         for (var e : path.getEdgeList()) {
             Vertex v1 = G.getEdgeSource(e);

@@ -49,6 +49,7 @@ public class App {
         t1 = System.nanoTime();
 
         var sp = DijkstraShortestPath.findPathBetween(G, source, sink);
+        G = null;
 
         t2 = System.nanoTime();
 
@@ -56,7 +57,7 @@ public class App {
 
         t1 = System.nanoTime();
 
-        int n = GraphWriter.writePath(sp, G, new File("solved.bmp"), infile);
+        int n = GraphWriter.writePath(sp, new File("solved.bmp"), infile);
 
         t2 = System.nanoTime();
 
