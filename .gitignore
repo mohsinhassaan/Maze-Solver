@@ -1,5 +1,7 @@
 .vscode/
 
+solved.bmp
+
 target/
 pom.xml.tag
 pom.xml.releaseBackup
