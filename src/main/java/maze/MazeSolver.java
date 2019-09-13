@@ -6,14 +6,13 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 import org.jgrapht.alg.shortestpath.DijkstraShortestPath;
-import org.jgrapht.io.ExportException;
 
 /**
  * Hello world!
  *
  */
-public class App {
-    public static void main(String[] args) throws IOException, ExportException {
+public class MazeSolver {
+    public static void main(String[] args) throws IOException {
         if (args.length < 1) {
             System.out.println("Insufficient arguments");
             return;
